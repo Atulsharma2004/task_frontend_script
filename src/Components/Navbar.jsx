@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../assets/img/logo13.jpg";
 
 const Navbar = () => {
-  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
-
-  const toggleProductsDropdown = () => {
-    setIsProductsDropdownOpen(!isProductsDropdownOpen);
-    console.log("Products button clicked!");
-  };
   return (
     <>
       <header className="shadow mb-2 sticky top-0 z-10 bg-white">
