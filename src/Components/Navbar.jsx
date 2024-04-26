@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/img/logo13.jpg";
 
 const Navbar = () => {
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
+
+  const toggleProductsDropdown = () => {
+    setIsProductsDropdownOpen(!isProductsDropdownOpen);
+    console.log("Products button clicked!");
+  };
   return (
     <>
       <header className="shadow mb-2 sticky top-0 z-10 bg-white">
@@ -70,7 +76,7 @@ const Navbar = () => {
 
           <nav
             aria-label="Header Navigation"
-            className="peer-checked:mt-8 peer-checked:max-h-56 flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all md:ml-8 md:max-h-full md:flex-row md:items-start navbar2"
+            className="peer-checked:mt-8 peer-checked:max-h-56 flex max-h-0 w-full flex-col items-center justify-between overflow-hidden transition-all md:ml-8 md:max-h-full md:flex-row md:items-start navbar2 "
           >
             <ul className="flex flex-col w-full items-center justify-between space-y-2  md:flex-row md:space-y-0 menu2">
               <li className="text-gray-600 md:mr-4 nav-item nav-item-font w-full flex flex-col justify-center items-center ">
@@ -90,6 +96,7 @@ const Navbar = () => {
                   About Us
                 </a>
               </li>
+
               <li className="text-gray-600 md:mr-4 nav-item nav-item-font w-full flex flex-col justify-center items-center">
                 <a
                   href="#"
@@ -98,6 +105,7 @@ const Navbar = () => {
                   Products
                 </a>
               </li>
+
               <li className="text-gray-600 md:mr-4 nav-item nav-item-font w-full flex flex-col justify-center items-center">
                 <a
                   href="#"

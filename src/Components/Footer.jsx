@@ -102,7 +102,7 @@ const Footer = () => {
               <span>
                 <MdEmail />
               </span>
-              <span>test@aryainfra.com</span>
+              <span>test@gmail.com</span>
             </li>
           </ul>
         </div>

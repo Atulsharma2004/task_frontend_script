@@ -32,9 +32,9 @@ const Carousel = ({ slides, autoplay = true, interval = 4000 }) => {
   };
 
   return (
-    <div className="overflow-hidden relative  md:h-[620px] h-full w-full">
+    <div className="overflow-hidden relative h-full w-full">
       <div
-        className={`flex transition ease-out duration-400 w-full h-full ${
+        className={`flex transition ease-out duration-400 h-full w-full ${
           isMoving ? "transition-paused" : ""
         }`}
         style={{
@@ -52,8 +52,8 @@ const Carousel = ({ slides, autoplay = true, interval = 4000 }) => {
           );
         })}
       </div>
-      <div className="absolute top-0 left-0   md:h-[620px] h-full w-full bg-black/75 text-white ">
-        <div className="md:w-1/2 w-5/6 md:mt-60 sm:mt-32 mt-16 m-auto ">
+      <div className="absolute top-0 left-0    h-full w-full bg-black/75 text-white ">
+        <div className="md:w-1/2 w-5/6 lg:mt-48 md:mt-32 sm:mt-32 mt-16 m-auto ">
           <h1 className="md:text-5xl text-xl text-center font-bold md:mb-4 mb-6">
             This is the Beautiful Slider Created by me.
           </h1>

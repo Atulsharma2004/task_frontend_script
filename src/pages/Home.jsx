@@ -8,8 +8,10 @@ const Home = () => {
     "https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg",
   ];
   return (
-    <div className=" md:w-[60%] w-full  m-auto mt-2 mb-4 ">
-      <Carousel slides={slides} />
+    <div className="">
+      <div className="border-container md:w-[60%] w-full md:h-[620px] h-full  m-auto mt-2 mb-4 ">
+        <Carousel slides={slides} />
+      </div>
     </div>
   );
 };

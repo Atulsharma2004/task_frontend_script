@@ -72,7 +72,7 @@ p, span{
 }
 
 .nav-item:hover:after {
-  width: 90%;
+  width: 80%;
   transform: scaleX(1);
   background-color: #0000ff;
 }
@@ -83,4 +83,9 @@ p, span{
   transform: scaleX(1);
   background-color: #0000ff;
 }
+}
+
+.border-container{
+  border-right: 8px #0000ff solid;
+  border-left: 8px #0000ff solid;
 }
