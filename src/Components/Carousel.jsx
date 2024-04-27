@@ -1,95 +1,84 @@
 import React, { useEffect, useState } from "react";
+import "../App.css";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 
 import { FaCircleArrowRight } from "react-icons/fa6";
 
 const Carousel = ({ slides, autoplay = true, interval = 4000 }) => {
   let [current, setCurrent] = useState(0);
-  let [isMoving, setIsMoving] = useState(false);
+  const bgImageStyle = {
+    backgroundImage: `url(${slides[current].url})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+  };
 
   // useEffect(() => {
-  //   if (autoplay && !isMoving) {
-  //     const timerId = setInterval(() => {
-  //       nextSlide();
-  //     }, interval);
+  //   const timer = setTimeout(() => {
+  //     if (current === 2) {
+  //       setCurrent(0);
+  //     } else {
+  //       setCurrent(current + 1);
+  //     }
+  //     return () => clearTimeout(timer);
+  //   }, 5000);
+  // }, [current]);
+  useEffect(() => {
+    if (autoplay) {
+      const timer = setTimeout(() => {
+        setCurrent((current + 1) % slides.length);
+      }, interval);
 
-  //     return () => clearInterval(timerId);
-  //   }
-  // }, [current, autoplay, isMoving, interval]);
+      return () => clearTimeout(timer);
+    }
+  }, [current, autoplay, interval, slides.length]);
+
+  // const nextSlide = (current) => {
+  //   setCurrent(current);
+  // };
+  const nextSlide = () => {
+    setCurrent((current + 1) % slides.length);
+  };
 
   const prevSlide = () => {
-    setIsMoving(true);
-    if (current === 0) setCurrent(slides.length - 1);
-    else setCurrent(current - 1);
-    setTimeout(() => setIsMoving(false), 400);
+    setCurrent((current + slides.length - 1) % slides.length);
   };
-
-  const nextSlide = () => {
-    setIsMoving(true);
-    if (current === slides.length - 1) setCurrent(0);
-    else setCurrent(current + 1);
-    setTimeout(() => setIsMoving(false), 400);
-  };
-
   return (
-    <div className="relative overflow-hidden h-full w-full ">
-      <div
-        className={`flex transition ease-out duration-400 h-full w-full ${
-          isMoving ? "transition-paused" : ""
-        }`}
-        style={{
-          transform: `translateX(-${current * 100}%)`,
-        }}
-      >
-        {slides.map((im, index) => {
-          return (
-            <img
-              src={im}
-              alt="image"
-              key={index}
-              className="h-full w-full object-cover bg-no-repeat bg-center"
+    <>
+      <div className="container-style md:h-[600px] h-[350px]">
+        <div
+          style={bgImageStyle}
+          className="h-full transition-all ease-out delay-150"
+        ></div>
+        <div className="transparent-back"></div>
+
+        <div className="description md:w-1/2 w-3/4 md:top-[20%] md:left-[10%] sm:top-[25%] sm:left-[15%] top-[10%] left-[5%]">
+          <div>
+            <h1 className="md:text-5xl text-3xl md:mb-8 mb-4">
+              {slides[current].title}
+            </h1>
+            <p className="md:text-lg text-md">{slides[current].body}</p>
+          </div>
+          <div className="carousel-boullt  mt-8 flex md:justify-center justify-start items-center">
+            {slides.map((slide, index) => (
+              <span
+                key={index}
+                onClick={() => nextSlide(current)}
+                className={`${
+                  index === current ? "active bg-white" : "bg-gray-500"
+                } md:w-[45px] md:h-[12px] w-[25px] h-[8px]`}
+              ></span>
+            ))}
+          </div>
+          <div className="carousel-arrows flex justify-between md:mt-12 mt-8 md:text-4xl text-2xl text-blue-400">
+            <FaCircleArrowLeft onClick={prevSlide} className="cursor-pointer" />
+            <FaCircleArrowRight
+              onClick={nextSlide}
+              className="cursor-pointer"
             />
-          );
-        })}
-      </div>
-      {/* <div className="absolute top-0 left-0    h-full w-full bg-black/75 text-white ">
-        <div className="md:w-1/2 w-5/6 lg:mt-48 md:mt-32 sm:mt-32 mt-16 m-auto ">
-          <h1 className="md:text-5xl text-xl text-center font-bold md:mb-4 mb-6">
-            This is the Beautiful Slider Created by me.
-          </h1>
-          <p className="md:text-lg  text-md font-md text-center sm:block hidden">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-            numquam possimus illum quis minus explicabo non labore alias. Ullam,
-            asperiores.
-          </p>
+          </div>
         </div>
-      </div> */}
-      <div className="absolute top-0 h-full w-full justify-between flex items-center text-white md:px-10 px-5 md:text-3xl text-xl">
-        <button onClick={prevSlide}>
-          <FaCircleArrowLeft />
-        </button>
-        <button onClick={nextSlide}>
-          <FaCircleArrowRight />
-        </button>
       </div>
-      <div className="absolute bottom-0 py-4 flex justify-center gap-3 w-full">
-        {slides.map((im, i) => {
-          return (
-            <div
-              onClick={() => {
-                setIsMoving(true);
-                setCurrent(i);
-                setTimeout(() => setIsMoving(false), 400);
-              }}
-              key={"circle" + i}
-              className={`rounded-full md:w-5 md:h-5 w-2 h-2 cursor-pointer ${
-                i == current ? "bg-white" : "bg-gray-500"
-              }`}
-            ></div>
-          );
-        })}
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -15,7 +15,7 @@ const Footer = () => {
     <div className="footer-bg pt-32 pb-12">
       <div className="hidden md:block"></div>
       <div className="inside"></div>
-      <div className="inside-footer flex md:flex-row flex-col container-main xl:gap-12 lg:gap-8 px-12 ">
+      <div className="inside-footer flex md:flex-row flex-col container-main xl:gap-12 gap-8  px-12 ">
         <div className="row1 w-full md:w-1/4">
           <div className="logo-footer text-3xl font-bold text-white mb-8">
             TheLogo
@@ -37,7 +37,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="row2 w-full md:w-1/4">
-          <div className="up-footer text-2xl text-white mb-8">Useful Links</div>
+          <div className="up-footer text-2xl text-white md:mb-8 mb-4">
+            Useful Links
+          </div>
           <div className="down-footer flex lg:gap-20 gap-12">
             <div className="left-footer text-white text-md">
               <ul>
@@ -75,7 +77,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="row3 w-full md:w-1/4 text-white">
-          <h3 className="text-white text-2xl mb-8">Contact</h3>
+          <h3 className="text-white text-2xl md:mb-8 mb-4">Contact</h3>
           <ul>
             <li className="flex  gap-2 text-md">
               <span className="mt-1">
@@ -107,7 +109,9 @@ const Footer = () => {
           </ul>
         </div>
         <div className="row4 w-full md:w-1/4">
-          <div className="head-footer text-2xl text-white mb-8">Newsletter</div>
+          <div className="head-footer text-2xl text-white md:mb-8 mb-4">
+            Newsletter
+          </div>
           <div className="text-footer text-md text-white mb-4">
             {" "}
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,

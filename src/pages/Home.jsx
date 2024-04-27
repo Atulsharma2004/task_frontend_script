@@ -1,20 +1,28 @@
 import React from "react";
 import Carousel from "../Components/Carousel.jsx";
+import sl1 from "../assets/img/sl1.webp";
+import sl2 from "../assets/img/sl2.jpg";
+import sl3 from "../assets/img/sl3.jpg";
 
 const Home = () => {
   const slides = [
-    "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
-    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-    "https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg",
+    {
+      url: sl1,
+      title: "Title1",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, numquam possimus illum quis minus explicabo non labore alias. Ullam,  asperiores.",
+    },
+    {
+      url: sl2,
+      title: "Title1",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, numquam possimus illum quis minus explicabo non labore alias. Ullam,  asperiores.",
+    },
+    {
+      url: sl3,
+      title: "Title1",
+      body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, numquam possimus illum quis minus explicabo non labore alias. Ullam,  asperiores.",
+    },
   ];
-  return (
-    <div className="">
-      <div className="border-container md:w-[60%] w-full md:h-[620px] h-full  m-auto mt-2 mb-4 ">
-        <Carousel slides={slides} />
-      </div>
-      {/* <Carousel slides={slides} /> */}
-    </div>
-  );
+  return <Carousel slides={slides} />;
 };
 
 export default Home;

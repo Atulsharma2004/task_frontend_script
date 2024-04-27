@@ -10,6 +10,9 @@ p, span{
   font-family: "Assistant", sans-serif;
 }
 
+.nav-header{
+  z-index: 1000;
+}
 .footer-bg{
     background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl4-UJ79ZTBWVL9Xs5-89UFOanMK0-nAKDFZxVHo8kgw&s") left center no-repeat;
     background-size: cover;
@@ -88,4 +91,44 @@ p, span{
 .border-container{
   border-right: 8px #0000ff solid;
   border-left: 8px #0000ff solid;
+}
+
+.container-style{
+  
+  position: relative;
+
+}
+
+.description{
+ 
+  position: absolute;
+  z-index: 998;
+  color: aliceblue;
+  
+}
+
+
+/* .carousel-boullt{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+} */
+
+.carousel-boullt span{
+  
+  /* background-color: rgb(193, 193, 191); */
+  margin-left: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 3px 2px 2px rgba(73, 72, 72, 0.338);
+}
+
+.transparent-back{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to top, rgba(22, 30, 33, 0.704), rgba(2, 2, 92, 0.79));
 }

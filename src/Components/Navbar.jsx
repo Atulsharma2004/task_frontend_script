@@ -4,7 +4,7 @@ import logo from "../assets/img/logo13.jpg";
 const Navbar = () => {
   return (
     <>
-      <header className="shadow mb-2 sticky top-0 z-10 bg-white">
+      <header className="shadow mb-2 sticky top-0 nav-header bg-white">
         <div className="relative flex max-w-screen-2xl flex-col overflow-hidden px-4 py-4 md:mx-auto md:flex-row md:items-center">
           <a
             href="#"
