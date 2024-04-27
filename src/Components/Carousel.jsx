@@ -7,15 +7,15 @@ const Carousel = ({ slides, autoplay = true, interval = 4000 }) => {
   let [current, setCurrent] = useState(0);
   let [isMoving, setIsMoving] = useState(false);
 
-  useEffect(() => {
-    if (autoplay && !isMoving) {
-      const timerId = setInterval(() => {
-        nextSlide();
-      }, interval);
+  // useEffect(() => {
+  //   if (autoplay && !isMoving) {
+  //     const timerId = setInterval(() => {
+  //       nextSlide();
+  //     }, interval);
 
-      return () => clearInterval(timerId);
-    }
-  }, [current, autoplay, isMoving, interval]);
+  //     return () => clearInterval(timerId);
+  //   }
+  // }, [current, autoplay, isMoving, interval]);
 
   const prevSlide = () => {
     setIsMoving(true);
@@ -32,7 +32,7 @@ const Carousel = ({ slides, autoplay = true, interval = 4000 }) => {
   };
 
   return (
-    <div className="overflow-hidden relative h-full w-full">
+    <div className="relative overflow-hidden h-full w-full ">
       <div
         className={`flex transition ease-out duration-400 h-full w-full ${
           isMoving ? "transition-paused" : ""
@@ -52,7 +52,7 @@ const Carousel = ({ slides, autoplay = true, interval = 4000 }) => {
           );
         })}
       </div>
-      <div className="absolute top-0 left-0    h-full w-full bg-black/75 text-white ">
+      {/* <div className="absolute top-0 left-0    h-full w-full bg-black/75 text-white ">
         <div className="md:w-1/2 w-5/6 lg:mt-48 md:mt-32 sm:mt-32 mt-16 m-auto ">
           <h1 className="md:text-5xl text-xl text-center font-bold md:mb-4 mb-6">
             This is the Beautiful Slider Created by me.
@@ -63,7 +63,7 @@ const Carousel = ({ slides, autoplay = true, interval = 4000 }) => {
             asperiores.
           </p>
         </div>
-      </div>
+      </div> */}
       <div className="absolute top-0 h-full w-full justify-between flex items-center text-white md:px-10 px-5 md:text-3xl text-xl">
         <button onClick={prevSlide}>
           <FaCircleArrowLeft />
@@ -72,7 +72,6 @@ const Carousel = ({ slides, autoplay = true, interval = 4000 }) => {
           <FaCircleArrowRight />
         </button>
       </div>
-
       <div className="absolute bottom-0 py-4 flex justify-center gap-3 w-full">
         {slides.map((im, i) => {
           return (

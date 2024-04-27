@@ -12,6 +12,7 @@ const Home = () => {
       <div className="border-container md:w-[60%] w-full md:h-[620px] h-full  m-auto mt-2 mb-4 ">
         <Carousel slides={slides} />
       </div>
+      {/* <Carousel slides={slides} /> */}
     </div>
   );
 };
