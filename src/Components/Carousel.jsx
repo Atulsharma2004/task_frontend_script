@@ -12,16 +12,6 @@ const Carousel = ({ slides, autoplay = true, interval = 4000 }) => {
     backgroundSize: "cover",
   };
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (current === 2) {
-  //       setCurrent(0);
-  //     } else {
-  //       setCurrent(current + 1);
-  //     }
-  //     return () => clearTimeout(timer);
-  //   }, 5000);
-  // }, [current]);
   useEffect(() => {
     if (autoplay) {
       const timer = setTimeout(() => {
@@ -32,9 +22,6 @@ const Carousel = ({ slides, autoplay = true, interval = 4000 }) => {
     }
   }, [current, autoplay, interval, slides.length]);
 
-  // const nextSlide = (current) => {
-  //   setCurrent(current);
-  // };
   const nextSlide = () => {
     setCurrent((current + 1) % slides.length);
   };

@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="logo-footer text-3xl font-bold text-white mb-8">
             TheLogo
           </div>
-          <div className="text-footer text-white text-md mb-4">
+          <div className="text-footer text-white text-md mb-4 footer-body-font">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima
             facere quos sed?
           </div>
@@ -37,40 +37,40 @@ const Footer = () => {
           </div>
         </div>
         <div className="row2 w-full md:w-1/4">
-          <div className="up-footer text-2xl text-white md:mb-8 mb-4">
+          <div className="up-footer text-2xl text-white md:mb-8 mb-4 footer-head-font">
             Useful Links
           </div>
           <div className="down-footer flex lg:gap-20 gap-12">
             <div className="left-footer text-white text-md">
               <ul>
                 <Link to={"/"}>
-                  <li>Home</li>
+                  <li className="footer-body-font">Home</li>
                 </Link>
                 <Link to={"/about"}>
-                  <li>About Us</li>
+                  <li className="footer-body-font">About Us</li>
                 </Link>
                 <Link to={"/services"}>
-                  <li>Services</li>
+                  <li className="footer-body-font">Services</li>
                 </Link>
                 <Link to={"/projects"}>
-                  <li>Projects</li>
+                  <li className="footer-body-font">Projects</li>
                 </Link>
               </ul>
             </div>
             <div className="right-footer text-white text-md">
               <ul>
                 <Link to={"/"}>
-                  <li>FAQ's</li>
+                  <li className="footer-body-font">FAQ's</li>
                 </Link>
                 <Link to={"/"}>
-                  <li>Privacy Policy</li>
+                  <li className="footer-body-font">Privacy Policy</li>
                 </Link>
                 <Link to={"/"}>
-                  <li>News</li>
+                  <li className="footer-body-font">News</li>
                 </Link>
 
                 <Link to={"/contact"}>
-                  <li>Contact</li>
+                  <li className="footer-body-font">Contact</li>
                 </Link>
               </ul>
             </div>
@@ -109,10 +109,10 @@ const Footer = () => {
           </ul>
         </div>
         <div className="row4 w-full md:w-1/4">
-          <div className="head-footer text-2xl text-white md:mb-8 mb-4">
+          <div className="head-footer text-2xl text-white md:mb-8 mb-4 footer-head-font">
             Newsletter
           </div>
-          <div className="text-footer text-md text-white mb-4">
+          <div className="text-footer text-md text-white mb-4 footer-body-font">
             {" "}
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
             facere..

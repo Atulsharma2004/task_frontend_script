@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 
-.nav-item-font, h1{
+.nav-item-font, h1, h3, .footer-head-font{
   /* font-family: "Playfair Display", serif; */
   font-family: "Merriweather", serif;
 }
-p, span{
+p, span, .footer-body-font{
   font-family: "Assistant", sans-serif;
 }
 
@@ -108,15 +108,9 @@ p, span{
 }
 
 
-/* .carousel-boullt{
-  display: flex;
-  align-items: center;
-  justify-content: start;
-} */
+
 
 .carousel-boullt span{
-  
-  /* background-color: rgb(193, 193, 191); */
   margin-left: 10px;
   border-radius: 10px;
   cursor: pointer;
