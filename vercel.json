@@ -1,6 +1,6 @@
 {
    "version": 2,
-   "name": "music-album",
+   "name": "project-task",
    "builds": [
       { "src": "main.js", "use": "@vercel/node" }
    ],
