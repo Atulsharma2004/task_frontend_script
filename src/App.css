@@ -64,6 +64,8 @@ p, span, .footer-body-font{
   font-weight: bold;
 }
 
+
+
 .nav-item:hover{
   /* color: #0000ff; */
   mask-image: linear-gradient(-75deg, rgba(228, 228, 228, 0.5) 30%, #0000ff 50%, rgba(71, 13, 245, 0.5) 70%);
@@ -75,10 +77,72 @@ p, span, .footer-body-font{
 }
 
 .nav-item:hover:after {
-  width: 80%;
+  width: 100%;
   transform: scaleX(1);
   background-color: #0000ff;
 }
+
+
+.nav-links li {
+  list-style-type: none;
+}
+
+.mega-box{
+  
+ 
+  
+ 
+  opacity: 0;
+  visibility: hidden;
+}
+
+.nav-links li:hover .mega-box{
+  transition: all 0.7s;
+  top: 54px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.content-mega{
+  background-color: white;
+  border: 5px;
+ 
+  width: 100%;
+}
+
+.main-mega{
+  width: 25%;
+  line-height: 45px;
+}
+.main-mega img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.mega-links{
+  
+  border-left: 1px solid black;
+ 
+}
+
+@media only screen and (max-width: 767px) {
+  .mega-links{
+  
+  border-bottom: 1px solid black;
+   border-left:none;
+   
+ 
+}
+.main-mega img{
+  display: none;
+}
+}
+
+
+
+
 
 @media only screen and (max-width: 600px) {
   .nav-item:hover:after {
@@ -87,6 +151,8 @@ p, span, .footer-body-font{
   background-color: #0000ff;
 }
 }
+
+
 
 .border-container{
   border-right: 8px #0000ff solid;
@@ -125,4 +191,14 @@ p, span, .footer-body-font{
   top: 0;
   left: 0;
   background-image: linear-gradient(to top, rgba(22, 30, 33, 0.704), rgba(2, 2, 92, 0.79));
+}
+
+.nav-items:hover{
+  /* color: #0000ff; */
+  mask-image: linear-gradient(-75deg, rgba(228, 228, 228, 0.5) 30%, #0000ff 50%, rgba(71, 13, 245, 0.5) 70%);
+  mask-size: 200%;
+  -webkit-animation: shine 2s infinite;
+          animation: shine 2s infinite;
+  transform: scale(1.05);
+  transition: all ease-out 0.3s;
 }
